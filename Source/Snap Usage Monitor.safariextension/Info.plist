@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Chris McFarland</string>
+	<key>Builder Version</key>
+	<string>6534.59.8</string>
+	<key>CFBundleDisplayName</key>
+	<string>Snap Usage Monitor</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.chrisNzl.safari.snapUsageMonitor</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.0.1</string>
+	<key>CFBundleVersion</key>
+	<string>0.0.1</string>
+	<key>Chrome</key>
+	<dict>
+		<key>Global Page</key>
+		<string>html/global.html</string>
+		<key>Popovers</key>
+		<array>
+			<dict>
+				<key>Filename</key>
+				<string>html/popover.html</string>
+				<key>Height</key>
+				<real>nan</real>
+				<key>Identifier</key>
+				<string>popover</string>
+			</dict>
+			<dict>
+				<key>Filename</key>
+				<string>html/popover_requireCredentials.html</string>
+				<key>Identifier</key>
+				<string>popover_requireCredentials</string>
+			</dict>
+		</array>
+		<key>Toolbar Items</key>
+		<array>
+			<dict>
+				<key>Command</key>
+				<string>showPopover</string>
+				<key>Identifier</key>
+				<string>toolbarIcon</string>
+				<key>Image</key>
+				<string>img/toolbarIcon.png</string>
+				<key>Label</key>
+				<string>Snap Usage Monitor</string>
+				<key>Menu</key>
+				<string>toolbarItemMenu</string>
+				<key>Popover</key>
+				<string>popover_requireCredentials</string>
+				<key>Tool Tip</key>
+				<string>Snap Usage Monitor</string>
+			</dict>
+		</array>
+	</dict>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict/>
+	</dict>
+	<key>Description</key>
+	<string>Easily monitor your Snap data usage.</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Allowed Domains</key>
+			<array>
+				<string>www.snap.net.nz</string>
+				<string>myaccount.snap.net.nz</string>
+			</array>
+			<key>Include Secure Pages</key>
+			<true/>
+			<key>Level</key>
+			<string>Some</string>
+		</dict>
+	</dict>
+	<key>Website</key>
+	<string>https://github.com/ChrisNZL/snap-safari</string>
+</dict>
+</plist>
