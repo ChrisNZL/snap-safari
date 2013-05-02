@@ -1,7 +1,5 @@
-snap-safari
-===========
-
 Snap Usage Monitor extension for Safari
+===========
 
 [Click here to install Snap Usage Monitor v0.0.1 for Safari](https://github.com/ChrisNZL/snap-safari/raw/master/Builds/SnapUsageMonitor_0.0.1.safariextz)
 
@@ -18,6 +16,6 @@ And a visual progress bar that displays:
 * Percentage of data used towards your limit
 * How far through the billing period you are
 
-Requires Safari 5.1 or higher.
+Requires Safari 5.1 or higher. (I've only tested this in Safari 5.1; my Mac is too old for Safari 6)
 
-I've only tested this in Safari 5.1. (my Mac is too old for Safari 6)
+For extensions for other browsers, please view my other [repositories](https://github.com/ChrisNZL?tab=repositories).
