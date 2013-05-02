@@ -1,7 +1,7 @@
 Snap Usage Monitor extension for Safari
 ===========
 
-[Click here to download Snap Usage Monitor v0.0.2 for Mac OS X Safari](https://github.com/ChrisNZL/snap-safari/raw/master/Builds/SnapUsageMonitor_0.0.1.safariextz) (66 KB)
+[**Click here to download Snap Usage Monitor v0.0.2 for Mac OS X Safari**](https://github.com/ChrisNZL/snap-safari/raw/master/Builds/SnapUsageMonitor_0.0.2.safariextz) (66 KB)
 
 ![](https://github.com/ChrisNZL/snap-safari/blob/master/screenshot.png?raw=true)
 
