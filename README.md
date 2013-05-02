@@ -3,6 +3,8 @@ Snap Usage Monitor extension for Safari
 
 [Click here to install Snap Usage Monitor v0.0.1 for Safari](https://github.com/ChrisNZL/snap-safari/raw/master/Builds/SnapUsageMonitor_0.0.1.safariextz)
 
+![](https://github.com/ChrisNZL/snap-safari/blob/master/screenshot.png?raw=true)
+
 If Snap is your ISP, this extension lets you view details of your data usage with the click of a button:
 * Data used
 * Data remaining
