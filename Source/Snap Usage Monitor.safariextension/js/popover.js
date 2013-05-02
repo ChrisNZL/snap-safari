@@ -128,7 +128,12 @@ function refreshDataUsage () {
 	setTimeout(safari.extension.globalPage.contentWindow.fetchDataUsage, 400);
 }
 
-$(document).ready(function(){
-	displayUsageInfo();
-	displayNetworkStatus();
-});
+try {
+	$(document).ready(function(){
+		displayUsageInfo();
+		displayNetworkStatus();
+	});
+} catch (e) {
+	// Send any errors to the global console, since Safari doesn't let you inspect popover consoles :/
+	safari.extension.globalPage.contentWindow.console.log('Popover error: '+e);
+}
