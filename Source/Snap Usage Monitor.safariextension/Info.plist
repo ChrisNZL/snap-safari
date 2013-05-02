@@ -81,6 +81,8 @@
 			<string>Some</string>
 		</dict>
 	</dict>
+	<key>Update Manifest URL</key>
+	<string>https://raw.github.com/ChrisNZL/snap-safari/master/updateManifest.plist</string>
 	<key>Website</key>
 	<string>https://github.com/ChrisNZL/snap-safari</string>
 </dict>
