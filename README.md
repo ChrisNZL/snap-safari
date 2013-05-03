@@ -1,7 +1,7 @@
 Snap Usage Monitor extension for Safari
 ===========
 
-[**Click here to download Snap Usage Monitor v0.0.2 for Mac OS X Safari**](https://github.com/ChrisNZL/snap-safari/raw/master/Builds/SnapUsageMonitor_0.0.2.safariextz) (66 KB)
+[**Click here to download Snap Usage Monitor v0.0.3 for Mac OS X Safari**](https://github.com/ChrisNZL/snap-safari/raw/master/Builds/SnapUsageMonitor_0.0.3.safariextz) (67 KB)
 
 ![](http://iforce.co.nz/i/e1axepgm.2ij.png)
 
@@ -20,6 +20,6 @@ And a visual progress bar that displays:
 
 **Requires Safari 5.1 or higher.** (I've only tested this in Safari 5.1; my Mac is too old for Safari 6)
 
-**Only works for Safari on Mac OS X. Does _not_ work for Safari on Windows.**
+**Only works for Safari on Mac OS X. Safari on Windows is unsupported.**
 
 For extensions for other browsers, please view my other [repositories](https://github.com/ChrisNZL?tab=repositories).

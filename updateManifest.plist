@@ -10,11 +10,11 @@
        <key>Developer Identifier</key>
        <string>HF8MWG2EP6</string>
        <key>CFBundleVersion</key>
-       <string>0.0.2</string>
+       <string>0.0.3</string>
        <key>CFBundleShortVersionString</key>
-       <string>0.0.2</string>
+       <string>0.0.3</string>
        <key>URL</key>
-       <string>https://github.com/ChrisNZL/snap-safari/raw/master/Builds/SnapUsageMonitor_0.0.2.safariextz</string>
+       <string>https://github.com/ChrisNZL/snap-safari/raw/master/Builds/SnapUsageMonitor_0.0.3.safariextz</string>
      </dict>
    </array>
 </dict>
