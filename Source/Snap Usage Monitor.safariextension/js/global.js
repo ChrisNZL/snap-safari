@@ -15,8 +15,30 @@ safari.application.addEventListener('message', function(event){
 			safari.extension.secureSettings.setItem('snapPassword', event.message.snapPassword);
 			event.target.page.dispatchMessage('Credentials have been saved', null);
 			break;
+		case 'Need to set cookie':
+			setCookie(event);
+			break;
 	}
 }, false);
+
+// Function to open Snap's summary page to set a PHPSESSID cookie
+function setCookie (event) {
+	// Open a tab, visit the secure summary page so that a PHPSESSID cookie is set, then respond
+	var snapTab = safari.application.activeBrowserWindow.openTab('background');
+	snapTab.addEventListener('navigate', function(){
+		this.close();
+		if (event == null) {
+			// Since cookie has been set and request came from popover, fetch usage now again
+			setTimeout(fetchDataUsage, 400);
+		} else {
+			// Tell options page to try logging in again
+			setTimeout(function(){
+				event.target.page.dispatchMessage('Cookie has been set', null);
+			}, 400);
+		}
+	}, true);
+	snapTab.url = 'https://myaccount.snap.net.nz/login/';
+}
 
 // Listen for toolbar button click commands
 safari.application.addEventListener('command', function(event){
@@ -108,7 +130,7 @@ function fetchNetworkStatus () {
 }
 
 // Function to fetch data usage info from Snap
-function fetchDataUsage () {
+function fetchDataUsage (userClickedReloadButton) {
 
 	// Only fetch data if credentials are stored
 	if (credentialsLookOkay(safari.extension.secureSettings.snapUsername, safari.extension.secureSettings.snapPassword)) {
@@ -118,18 +140,31 @@ function fetchDataUsage () {
 		resetDataFetchingInterval();
 		
 		// POST user's credentials to the login URL with attribute names that match Snap's login form
-		var loginUrl = 'https://myaccount.snap.net.nz/login/?next='+encodeURI('/summary');
-		var postData = {
-			form_Username: safari.extension.secureSettings.snapUsername,
-			form_Password: safari.extension.secureSettings.snapPassword,
-			action: 'Login'
-		};
-		var request = $.post(loginUrl, postData)
-		.done(function(result){
+		jQuery.ajax({
+			cache: false,
+			data: {
+				form_Username: safari.extension.secureSettings.snapUsername,
+				form_Password: safari.extension.secureSettings.snapPassword,
+				action: 'Login'
+			},
+			type: 'POST',
+			url: 'https://myaccount.snap.net.nz/login/'
+		})
+		.done(function(result, textStatus, jqXHR){
 			if ($('div.error', result).length > 0) {
 				console.warn('Oops! Snap\'s server returned the following error:\n\n"'+$('div.error', result).text()+'"\n\nPlease ensure your username and password are correct.');
 			} else if ($('h2:contains("Data Services")', result).length != 1) {
-				console.warn('Oops! Snap Usage Monitor logged into your account okay, but no Data Services were found.');
+				if ($('div.package.login', result).length == 1) {
+					// PHPSESSID cookie does not exist for snap.net.nz; we need to visit the page in Safari, then try this again.
+					console.log('PHPSESSID cookie for myaccount.snap.net.nz does not exist.');
+					if (userClickedReloadButton) {
+						setTimeout(function(){
+							setCookie(null);
+						}, 400);
+					}
+				} else {
+					console.warn('Oops! Snap Usage Monitor logged into your account okay, but no Data Services were found.');
+				}
 			} else {
 				// Logged in successfully!
 				// Parse the fetched HTML

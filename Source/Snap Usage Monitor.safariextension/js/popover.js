@@ -125,7 +125,9 @@ function resizePopover () {
 // Function to get updated usage info
 function refreshDataUsage () {
 	$('#lastUpdated').text('Updating...');
-	setTimeout(safari.extension.globalPage.contentWindow.fetchDataUsage, 400);
+	setTimeout(function(){
+		safari.extension.globalPage.contentWindow.fetchDataUsage(true);
+	}, 400);
 }
 
 try {
