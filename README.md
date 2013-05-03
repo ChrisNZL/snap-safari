@@ -20,6 +20,6 @@ And a visual progress bar that displays:
 
 **Requires Safari 5.1 or higher.** (I've only tested this in Safari 5.1; my Mac is too old for Safari 6)
 
-**Only works for Safari on Mac OS X. Safari on Windows is unsupported.**
+**Only works for Safari on Mac OS X. Safari on Windows is not supported.**
 
 For extensions for other browsers, please view my other [repositories](https://github.com/ChrisNZL?tab=repositories).
