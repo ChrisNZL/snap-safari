@@ -1,3 +1,5 @@
+**!!! (18 Sep 2013) Please note: due to Safari being stupidly buggy, I've stopped supporting this Safari extension. I am still actively updating the Chromium version, however!**
+
 Snap Usage Monitor extension for Safari
 ===========
 
